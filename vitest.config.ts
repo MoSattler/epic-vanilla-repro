@@ -1,11 +1,12 @@
 /// <reference types="vitest" />
 
+import { vanillaExtractPlugin } from '@vanilla-extract/vite-plugin';
 import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
 export default defineConfig({
 	// @ts-expect-error their types are wrong
-	plugins: [react()],
+	plugins: [react(), vanillaExtractPlugin()],
 	css: { postcss: { plugins: [] } },
 	test: {
 		include: ['./app/**/*.test.{ts,tsx}'],
